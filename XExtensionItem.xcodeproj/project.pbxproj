@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 210D65EB1F01D3CE001D378F /* XExtensionItem.h */; };
+		210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 210D65EB1F01D3CE001D378F /* XExtensionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E53BFF1B0405D700A74760 /* XExtensionItemObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E53BFE1B0405D700A74760 /* XExtensionItemObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E53C051B0405D700A74760 /* XExtensionItem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E53BF91B0405D700A74760 /* XExtensionItem.framework */; };
 		93E53C0C1B0405D700A74760 /* XExtensionItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E53C0B1B0405D700A74760 /* XExtensionItemTests.m */; };
@@ -165,11 +165,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */,
 				93E53C1C1B0406C200A74760 /* XExtensionItemCustomParameters.h in Headers */,
 				93E53C1F1B0406C200A74760 /* XExtensionItemTypeSafeDictionaryValues.h in Headers */,
 				93E53C1D1B0406C200A74760 /* XExtensionItemReferrer.h in Headers */,
 				93E53C391B04079A00A74760 /* XExtensionItemTumblrParameters.h in Headers */,
-				210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */,
 				93E53BFF1B0405D700A74760 /* XExtensionItemObj.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
