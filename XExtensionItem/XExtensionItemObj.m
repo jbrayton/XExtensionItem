@@ -1,4 +1,4 @@
-#import "XExtensionItem.h"
+#import "XExtensionItemObj.h"
 #import "XExtensionItemReferrer.h"
 #import "XExtensionItemTypeSafeDictionaryValues.h"
 #import <MobileCoreServices/MobileCoreServices.h>

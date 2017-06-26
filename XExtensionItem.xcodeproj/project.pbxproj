@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93E53BFF1B0405D700A74760 /* XExtensionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E53BFE1B0405D700A74760 /* XExtensionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 210D65EB1F01D3CE001D378F /* XExtensionItem.h */; };
+		93E53BFF1B0405D700A74760 /* XExtensionItemObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E53BFE1B0405D700A74760 /* XExtensionItemObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E53C051B0405D700A74760 /* XExtensionItem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E53BF91B0405D700A74760 /* XExtensionItem.framework */; };
 		93E53C0C1B0405D700A74760 /* XExtensionItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E53C0B1B0405D700A74760 /* XExtensionItemTests.m */; };
-		93E53C1B1B0406C200A74760 /* XExtensionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E53C151B0406C200A74760 /* XExtensionItem.m */; };
+		93E53C1B1B0406C200A74760 /* XExtensionItemObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E53C151B0406C200A74760 /* XExtensionItemObj.m */; };
 		93E53C1C1B0406C200A74760 /* XExtensionItemCustomParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E53C161B0406C200A74760 /* XExtensionItemCustomParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E53C1D1B0406C200A74760 /* XExtensionItemReferrer.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E53C171B0406C200A74760 /* XExtensionItemReferrer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E53C1E1B0406C200A74760 /* XExtensionItemReferrer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E53C181B0406C200A74760 /* XExtensionItemReferrer.m */; };
@@ -34,13 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210D65EB1F01D3CE001D378F /* XExtensionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionItem.h; sourceTree = "<group>"; };
 		93E53BF91B0405D700A74760 /* XExtensionItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XExtensionItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E53BFD1B0405D700A74760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93E53BFE1B0405D700A74760 /* XExtensionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XExtensionItem.h; sourceTree = "<group>"; };
+		93E53BFE1B0405D700A74760 /* XExtensionItemObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XExtensionItemObj.h; sourceTree = "<group>"; };
 		93E53C041B0405D700A74760 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E53C0A1B0405D700A74760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93E53C0B1B0405D700A74760 /* XExtensionItemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XExtensionItemTests.m; sourceTree = "<group>"; };
-		93E53C151B0406C200A74760 /* XExtensionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XExtensionItem.m; sourceTree = "<group>"; };
+		93E53C151B0406C200A74760 /* XExtensionItemObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XExtensionItemObj.m; sourceTree = "<group>"; };
 		93E53C161B0406C200A74760 /* XExtensionItemCustomParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionItemCustomParameters.h; sourceTree = "<group>"; };
 		93E53C171B0406C200A74760 /* XExtensionItemReferrer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionItemReferrer.h; sourceTree = "<group>"; };
 		93E53C181B0406C200A74760 /* XExtensionItemReferrer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XExtensionItemReferrer.m; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		93E53BEF1B0405D700A74760 = {
 			isa = PBXGroup;
 			children = (
+				210D65EB1F01D3CE001D378F /* XExtensionItem.h */,
 				93E53BFB1B0405D700A74760 /* XExtensionItem */,
 				93E53C081B0405D700A74760 /* Tests */,
 				93E53BFA1B0405D700A74760 /* Products */,
@@ -96,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				93E53C311B04078200A74760 /* Custom */,
-				93E53BFE1B0405D700A74760 /* XExtensionItem.h */,
-				93E53C151B0406C200A74760 /* XExtensionItem.m */,
+				93E53BFE1B0405D700A74760 /* XExtensionItemObj.h */,
+				93E53C151B0406C200A74760 /* XExtensionItemObj.m */,
 				93E53C161B0406C200A74760 /* XExtensionItemCustomParameters.h */,
 				93E53C171B0406C200A74760 /* XExtensionItemReferrer.h */,
 				93E53C181B0406C200A74760 /* XExtensionItemReferrer.m */,
@@ -166,7 +169,8 @@
 				93E53C1F1B0406C200A74760 /* XExtensionItemTypeSafeDictionaryValues.h in Headers */,
 				93E53C1D1B0406C200A74760 /* XExtensionItemReferrer.h in Headers */,
 				93E53C391B04079A00A74760 /* XExtensionItemTumblrParameters.h in Headers */,
-				93E53BFF1B0405D700A74760 /* XExtensionItem.h in Headers */,
+				210D65EC1F01D3CE001D378F /* XExtensionItem.h in Headers */,
+				93E53BFF1B0405D700A74760 /* XExtensionItemObj.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +275,7 @@
 				93E53C3A1B04079A00A74760 /* XExtensionItemTumblrParameters.m in Sources */,
 				93E53C1E1B0406C200A74760 /* XExtensionItemReferrer.m in Sources */,
 				93E53C201B0406C200A74760 /* XExtensionItemTypeSafeDictionaryValues.m in Sources */,
-				93E53C1B1B0406C200A74760 /* XExtensionItem.m in Sources */,
+				93E53C1B1B0406C200A74760 /* XExtensionItemObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

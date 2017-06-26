@@ -2,7 +2,7 @@
 @import UIKit;
 @import XCTest;
 #import "CustomParameters.h"
-#import "XExtensionItem.h"
+#import "XExtensionItemObj.h"
 #import "XExtensionItemTestHelpers.h"
 
 @interface XExtensionItemTests : XCTestCase
