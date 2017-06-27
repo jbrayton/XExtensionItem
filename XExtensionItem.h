@@ -13,5 +13,6 @@
 #import <XExtensionItem/XExtensionItemCustomParameters.h>
 #import <XExtensionItem/XExtensionItemReferrer.h>
 #import <XExtensionItem/XExtensionItemTypeSafeDictionaryValues.h>
+#import <XExtensionItem/XExtensionItemTumblrParameters.h>
 
 #endif /* XExtensionItem_h */
