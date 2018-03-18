@@ -324,6 +324,7 @@ static BOOL isExtensionItemInputAcceptedByActivityType(NSString *activityType) {
                                                              UIActivityTypeSaveToCameraRoll,
                                                              UIActivityTypeAddToReadingList,
                                                              UIActivityTypeAirDrop,
+                                                             @"com.tinyspeck.chatlyio.share", // Slack
                                                              ]];
     
     /*
