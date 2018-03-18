@@ -325,6 +325,8 @@ static BOOL isExtensionItemInputAcceptedByActivityType(NSString *activityType) {
                                                              UIActivityTypeAddToReadingList,
                                                              UIActivityTypeAirDrop,
                                                              @"com.tinyspeck.chatlyio.share", // Slack
+                                                             @"com.google.inbox.ShareExtension", // Google Inbox
+                                                             @"com.facebook.Messenger.ShareExtension" // Facebook
                                                              ]];
     
     /*
