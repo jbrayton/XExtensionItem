@@ -151,6 +151,11 @@ static NSString * const ActivityTypeCatchAll = @"*";
 }
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType {
+    
+    NSArray* justTitleAndUrl = @[@"com.tinyspeck.chatlyio.share", // Slack
+                                 @"com.google.inbox.ShareExtension", // Google Inbox
+                                 @"com.facebook.Messenger.ShareExtension" // Facebook
+                                 ];
     if (isExtensionItemInputAcceptedByActivityType(activityType)) {
         /*
          Share extensions take `NSExtensionItem` instances as input, and *some* system activities do as well, but some 
@@ -192,7 +197,6 @@ static NSString * const ActivityTypeCatchAll = @"*";
             
         item.attachments = ({
             id activityItem = [self activityItemForActivityType:activityType];
-            
             NSString *typeIdentifier = ^NSString *{
                 BOOL classHasChanged = ![activityItem isKindOfClass:[self.placeholderItem class]];
                 
@@ -212,27 +216,31 @@ static NSString * const ActivityTypeCatchAll = @"*";
             
             NSItemProvider *mainAttachment = [[NSItemProvider alloc] initWithItem:activityItem typeIdentifier:typeIdentifier];
             
-            if (self.thumbnailProvider) {
-                mainAttachment.previewImageHandler = ^(NSItemProviderCompletionHandler completionHandler, Class expectedValueClass, NSDictionary *options) {
-                    CGSize preferredImageSize = [[options objectForKey:NSItemProviderPreferredImageSizeKey] CGSizeValue];
-                    UIImage *thumbnail = self.thumbnailProvider(preferredImageSize, activityType);
-                    completionHandler(thumbnail, nil);
-                };
+            if (![justTitleAndUrl containsObject:activityType]) {
+                if (self.thumbnailProvider) {
+                    mainAttachment.previewImageHandler = ^(NSItemProviderCompletionHandler completionHandler, Class expectedValueClass, NSDictionary *options) {
+                        CGSize preferredImageSize = [[options objectForKey:NSItemProviderPreferredImageSizeKey] CGSizeValue];
+                        UIImage *thumbnail = self.thumbnailProvider(preferredImageSize, activityType);
+                        completionHandler(thumbnail, nil);
+                    };
+                }
             }
             
             NSMutableArray *attachments = [[NSMutableArray alloc] initWithObjects:mainAttachment, nil];
 
-            for (id attachmentItem in [self additionalAttachmentsForActivityType:activityType]) {
-                if ([attachmentItem isKindOfClass:[NSItemProvider class]]) {
-                    [attachments addObject:attachmentItem];
-                }
-                else {
-                    NSString *additionalAttachmentTypeIdentifier = typeIdentifierForActivityItem(attachmentItem);
-                    
-                    if (typeIdentifier) {
-                        NSItemProvider *attachmentProvider = [[NSItemProvider alloc] initWithItem:attachmentItem
-                                                                                   typeIdentifier:additionalAttachmentTypeIdentifier];
-                        [attachments addObject:attachmentProvider];
+            if (![justTitleAndUrl containsObject:activityType]) {
+                for (id attachmentItem in [self additionalAttachmentsForActivityType:activityType]) {
+                    if ([attachmentItem isKindOfClass:[NSItemProvider class]]) {
+                        [attachments addObject:attachmentItem];
+                    }
+                    else {
+                        NSString *additionalAttachmentTypeIdentifier = typeIdentifierForActivityItem(attachmentItem);
+                        
+                        if (typeIdentifier) {
+                            NSItemProvider *attachmentProvider = [[NSItemProvider alloc] initWithItem:attachmentItem
+                                                                                       typeIdentifier:additionalAttachmentTypeIdentifier];
+                            [attachments addObject:attachmentProvider];
+                        }
                     }
                 }
             }
@@ -240,8 +248,10 @@ static NSString * const ActivityTypeCatchAll = @"*";
             attachments;
         });
         
-        item.attributedContentText = [self attributedContentTextForActivityType:activityType];
-        
+        if (![justTitleAndUrl containsObject:activityType]) {
+            item.attributedContentText = [self attributedContentTextForActivityType:activityType];
+        }
+
         if (self.title) {
             item.attributedTitle = [[NSAttributedString alloc] initWithString:self.title];
         }
@@ -323,11 +333,7 @@ static BOOL isExtensionItemInputAcceptedByActivityType(NSString *activityType) {
                                                              UIActivityTypeAssignToContact,
                                                              UIActivityTypeSaveToCameraRoll,
                                                              UIActivityTypeAddToReadingList,
-                                                             UIActivityTypeAirDrop,
-                                                             @"com.tinyspeck.chatlyio.share", // Slack
-                                                             @"com.google.inbox.ShareExtension", // Google Inbox
-                                                             @"com.facebook.Messenger.ShareExtension" // Facebook
-                                                             ]];
+                                                             UIActivityTypeAirDrop]];
     
     /*
      The following activities are capable of taking `NSExtensionItem` instances as input. They display system share 
