@@ -324,7 +324,8 @@ static BOOL isExtensionItemInputAcceptedByActivityType(NSString *activityType) {
                                                              UIActivityTypeSaveToCameraRoll,
                                                              UIActivityTypeAddToReadingList,
                                                              UIActivityTypeAirDrop,
-                                                             @"com.devon-technologies.thinktogo.Clip-to-DEVONthink"
+                                                             @"com.devon-technologies.thinktogo.Clip-to-DEVONthink",
+                                                             @"com.devon-technologies.thinktogo.clip"
                                                              ]];
     
     /*
